@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="Database1Model.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="Database1Model.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="ticketFee" ColumnName="ticketFee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registers">
+      <EntityTypeMapping TypeName="Database1Model.Register">
+        <MappingFragment StoreEntitySet="Register">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="guestNumber" ColumnName="guestNumber" />
+          <ScalarProperty Name="paymentAmount" ColumnName="paymentAmount" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

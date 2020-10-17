@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title> Online Event Registration </title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+
+<body>
+    <section class="container-fluid">
+        <div class="header row">
+            Online Event Registration System
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 menu">
+
+                <a href="/Home/index"> Home </a>
+                <a href="/Client/viewClient"> Client </a>
+                <a href="/Client/edit"> Edit Client </a>
+                <a href="/Registration/viewRegister"> Event-Registration </a>
+                <a href="/Search/index"> Search </a>
+                <a href="/Event/index"> Event-Details </a>
+                <a href="/Registration/Delete"> Delete Registeration </a>
+
+
+            </div>
+            @RenderBody()
+        </div>
+
+        <div class="footer row">
+            Thanks for visiting our Page
+
+        </div>
+    </section>
+</body>

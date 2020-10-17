@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+    <h2> Event Details <!-- <a href="@Url.Action("add", "Event")"> <span class="glyphicon glyphicon-plus"></span></a>  --> </h2>
+
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["message"]</strong>
+    </div>
+}
+
+<table class=" table">
+
+    <th> Event Name</th>
+    <th> Description</th>
+    <th> Location</th>
+    <th> Date</th>
+    <th> TicketFee</th>
+    <!--  <th>Update/Delete</th> -->
+    @foreach (var i in Model)
+    {
+
+        <tr>
+            <td>@i.eventName</td>
+            <td>@i.description</td>
+            <td>@i.location</td>
+            <td>@i.date</td>
+            <td>@i.ticketFee</td>
+            <!--<td>
+                 <a href="@Url.Action("delete/"+i.eventName, "Event")" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash"></span></a>
+                 <a href="@Url.Action("edit/"+i.eventName, "Event")" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-edit"></span></a>
+            </td>-->
+        </tr>
+
+    }
+
+</table>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "ViewClient";
+}
+
+<h2> Client Details  <a href="@Url.Action("index", "Client")"> <span class="glyphicon glyphicon-plus"></span></a></h2>
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["message"]</strong>
+    </div>
+}
+
+<table class=" table">
+
+    <th> Client Email</th>
+    <th> Full Name </th>
+    <th> Address </th>
+    <th> Age </th>
+    <th> Phone </th>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.email</td>
+            <td>@i.fullName</td>
+            <td>@i.address</td>
+            <td>@i.age</td>
+            <td>@i.phone</td>
+
+        </tr>
+    }
+
+</table>

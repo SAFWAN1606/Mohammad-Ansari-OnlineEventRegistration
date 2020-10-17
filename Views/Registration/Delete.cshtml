@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<br />
+<br />
+<br />
+<section class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Delete Event </div>
+        <div class="panel-body">
+            <form class="form-center" method="post" action=" ~/Registration/DeleteEvent">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="eventName"> Event Name:  </label>
+                    <div class="col-sm-10">
+                        <input type="text" name="eventName" id="eventName" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email"> Client Email: </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="email" id="email" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</section>
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["message"]</strong>
+    </div>
+}
+<table class=" table">
+
+    <th> Register ID</th>
+    <th> Guest Number</th>
+    <th> Payment Amount </th>
+    <th> Event Name </th>
+    <th> Client Email </th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.guestNumber</td>
+            <td>@i.paymentAmount</td>
+            <td>@i.eventName</td>
+            <td>@i.email</td>
+
+
+        </tr>
+    }
+
+</table>

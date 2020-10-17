@@ -1,0 +1,67 @@
+﻿@model OnlineRegistration.Models.Register
+
+@{
+    ViewBag.Title = "index";
+}
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["message"]</strong>
+    </div>
+}
+
+<br />
+<br />
+<br />
+<section class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Event Registration </div>
+        <div class="panel-body">
+            <form class="form-horizontal" method="post" action="~/Registration/Index">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Id"> Guest ID:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="Id" id="Id" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name"> Guest Number:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="guestNumber" id="guestNumber" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.guestNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="address"> Guest PayAmount:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="paymentAmount" id="paymentAmount" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.paymentAmount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="age">  Event Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="eventName" id="eventName" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.eventName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="phone"> Guest Email:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="email" id="email" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
